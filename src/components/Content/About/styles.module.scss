@@ -1,0 +1,440 @@
+@import '@styles/mixins.modules';
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+
+//about
+$heading_about_width: 68.75rem;
+$heading_about_height: 46.88rem;
+$heading_about_font_size: 10rem;
+$heading_about_padding: 2.5rem;
+$heading_about_margin_top: 2.5rem;
+
+//aboutme
+$container_about_me_padding: 0 0 6.25rem 0;
+$about_img_width: 31.25rem;
+$about_img_height: 25rem;
+$about_margin_left: 1.9rem;
+$about_readmore_height: 11.88rem;
+$about_readmore_font-size: 1.57rem;
+$about_readmore_margin-right: 3.75rem;
+$about_p_font_size: 1.57rem;
+$about_p_margin: 6.25rem 3.75rem 0 0;
+
+//experience
+$container_experience_margin: 2.5rem;
+$experience_card_margin: 1rem;
+$experience_card_width: 21.88rem;
+$experience_card_height: 25rem;
+$experience_card_padding: 1.25rem;
+
+//skills
+$skills_padding: 0 3.2rem 3.2rem 3.2rem;
+$about_skills_margin: 1.25rem;
+$about_skills_h3_font_size: 1.56rem;
+$about_skills_h4_padding: 0.6rem;
+$about_skills_li_margin: 1.25rem;
+
+//btnreadmore
+$readmore_btn_font_size: 1.57rem;
+
+
+
+
+.containerAbout {
+    flex-direction: column;
+    width: 100%;
+    background: #1f2024;
+    overflow: hidden;
+    @include flex_box_custom(center, center, 10px);
+
+    .headingAbout {
+        width: $heading_about_width;
+        height: $heading_about_height;
+        font-family: "Black Ops One", system-ui;
+        font-size: $heading_about_font_size;
+        line-height: 1;
+        text-transform: uppercase;
+        background: radial-gradient(circle, #8cfffb, #00a8f3, #3f48cc, #8cfffb, #00a8f3, #8cfffb, #00a8f3,);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 2px #fff;
+        text-align: center;
+        padding: $heading_about_padding;
+        box-sizing: border-box;
+
+        p {
+            margin-top: $heading_about_margin_top;
+        }
+    }
+    
+    h1, h2 {
+        margin-left: $about_margin_left;
+    }
+    
+    
+}
+
+
+.containerAboutMe {
+    width: 100%;
+    background: #1f2024;
+    color: #fff;
+    padding: $container_about_me_padding;
+    overflow: hidden;
+    @include flex_box_custom(center, center, 50px);
+
+    img{
+        width: $about_img_width;
+        height: $about_img_height;
+        margin-left: $about_margin_left;
+        @include radius_common(30px)
+    }
+
+    p {
+        font-size: $about_p_font_size;
+        line-height: 2;
+        margin: $about_p_margin;
+        white-space: pre-wrap;
+    }
+
+    hr { 
+        margin-left: $about_margin_left;
+        filter: brightness(50%);
+    }
+
+    .readmore {
+        height: $about_readmore_height;
+        font-size: $about_readmore_font-size;
+        line-height: 2;
+        margin-right: $about_readmore_margin-right;
+        white-space: pre-wrap;
+        overflow: hidden; 
+    }
+}
+
+.containerExperience {
+    width: 100%;
+    margin: $container_experience_margin;
+    overflow-x: hidden; 
+    scroll-behavior: smooth; 
+    @include flex_box_custom(left, center, 20px);
+    box-sizing: border-box;
+    
+    .experienceCard {
+        width: $experience_card_width;
+        height: $experience_card_height;
+        overflow: hidden;
+        border: 5px solid #fff;
+        @include radius_common(20px);
+        margin: $experience_card_margin;
+        padding: $experience_card_padding;
+        box-sizing: border-box;
+
+        h3 {
+            margin: 0;
+        }
+
+        hr {
+            height: 5px;
+            background: #fff;
+            @include radius_common
+        }
+    }
+
+}
+
+
+.skills {
+    width: 100%;
+    padding: $skills_padding;
+}
+
+
+.containerSkills {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    
+    .be, 
+    .fe,
+    .others{
+        margin: $about_skills_margin;
+        box-sizing: border-box;
+    }
+    
+    
+    .be h3, 
+    .fe h3,
+    .others h3{
+        text-align: center;
+        background: #fff;
+        font-size: $about_skills_h3_font_size;
+        color: #000 ;
+        margin: 0;
+        border: #000 5px solid;
+    }
+    
+    .be h4, 
+    .fe h4,
+    .others h4 {
+        border-bottom: #fff 2px solid; 
+        margin: 0;
+        padding: $about_skills_h4_padding;
+        text-align:center;
+    }
+    
+    .be div,
+    .fe div,
+    .others div {
+        background: #000;
+        border: #fff 1px solid;
+    }
+    
+    .be li,
+    .fe li,
+    .others li {
+        margin: $about_skills_li_margin;
+    }
+}
+
+
+.readmoreBtn {
+    color: #00a8f3;
+    font-size: $readmore_btn_font_size;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+//Mobile
+@media screen and (max-width: 600px) {
+    //about
+    $heading_about_width: 100%;
+    $heading_about_height: 30rem;
+    $heading_about_font_size: 4rem;
+    $heading_about_padding: 2.5rem;
+    $heading_about_margin_top: 6rem;
+
+    //aboutme
+    $container_about_me_padding: 0 0 6.25rem 0;
+    $about_img_width: 100%;
+    $about_img_height: 10rem;
+    $about_margin_left: 1rem;
+    $about_readmore_height: 12rem;
+    $about_readmore_font-size: 1rem;
+    $about_readmore_margin: 0rem 1rem 0 1rem;
+    $about_p_font_size: 1rem;
+    $about_p_margin: 1rem 1rem 0 0;
+
+    //experience
+    $container_experience_width: 23rem;
+    $container_experience_margin: 2rem;
+    $experience_card_width: 21rem;
+    $experience_card_height: 25rem;
+    $experience_card_margin: 1rem;
+    $experience_card_padding: 1.25rem;
+
+    //skills
+    $skills_padding: 0 3.2rem 3.2rem 3.2rem;
+    $about_skills_margin: 1.25rem;
+    $about_skills_h3_font_size: 1.56rem;
+    $about_skills_h4_padding: 0.6rem;
+    $about_skills_li_margin: 1.25rem;
+
+    //btnreadmore
+    $readmore_btn_font_size: 1rem;
+
+
+
+
+    .containerAbout {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: #1f2024;
+        overflow: hidden;
+        @include flex_box_custom(center, center, 10px);
+
+        .headingAbout {
+            width: $heading_about_width;
+            height: $heading_about_height;
+            font-family: "Black Ops One", system-ui;
+            font-size: $heading_about_font_size;
+            line-height: 1;
+            text-transform: uppercase;
+            background: radial-gradient(circle, #8cfffb, #00a8f3, #3f48cc, #8cfffb, #00a8f3, #8cfffb, #00a8f3,);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 2px #fff;
+            text-align: center;
+            padding: $heading_about_padding;
+            box-sizing: border-box;
+
+            p {
+                margin-top: $heading_about_margin_top;
+            }
+        }
+        
+        h1, h2 {
+            margin-left: $about_margin_left;
+        }
+        
+        
+    }
+
+
+    .containerAboutMe {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: #1f2024;
+        color: #fff;
+        padding: $container_about_me_padding;
+        overflow: hidden;
+        gap: 0;
+
+        img{
+            width: $about_img_width;
+            height: $about_img_height;
+            margin-left: $about_margin_left;
+            @include radius_common(30px)
+        }
+
+        p {
+            font-size: $about_p_font_size;
+            width: 25rem;
+            line-height: 2;
+            margin: $about_readmore_margin;
+            white-space: pre-wrap;
+        }
+
+        hr { 
+            margin-left: $about_margin_left;
+            filter: brightness(50%);
+        }
+
+        .readmore {
+            height: $about_readmore_height;
+            font-size: $about_readmore_font-size;
+            line-height: 2;
+            margin: $about_readmore_margin;
+            white-space: pre-wrap;
+            overflow: hidden; 
+        }
+    }
+
+    .containerExperience {
+        width: $container_experience_width;
+        margin: $container_experience_margin;
+        overflow-x: hidden; 
+        scroll-behavior: smooth; 
+        @include flex_box_custom(center, center, 20px);
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        white-space: normal;
+        
+        .experienceCard {
+            width: $experience_card_width;
+            height: $experience_card_height;
+            overflow: hidden;
+            border: 5px solid #fff;
+            @include radius_common(20px);
+            margin: $experience_card_margin;
+            padding: $experience_card_padding;
+            box-sizing: border-box;
+
+            h3 {
+                margin: 0;
+            }
+
+            hr {
+                height: 5px;
+                background: #fff;
+                @include radius_common
+            }
+        }
+
+    }
+
+
+    .skills {
+        width: 100%;
+        padding: $skills_padding;
+    }
+
+
+    .containerSkills {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        
+        .be, 
+        .fe,
+        .others{
+            margin: $about_skills_margin;
+            box-sizing: border-box;
+        }
+        
+        
+        .be h3, 
+        .fe h3,
+        .others h3{
+            text-align: center;
+            background: #fff;
+            font-size: $about_skills_h3_font_size;
+            color: #000 ;
+            margin: 0;
+            border: #000 5px solid;
+        }
+        
+        .be h4, 
+        .fe h4,
+        .others h4 {
+            border-bottom: #fff 2px solid; 
+            margin: 0;
+            padding: $about_skills_h4_padding;
+            text-align:center;
+        }
+        
+        .be div,
+        .fe div,
+        .others div {
+            background: #000;
+            border: #fff 1px solid;
+        }
+        
+        .be li,
+        .fe li,
+        .others li {
+            margin: $about_skills_li_margin;
+        }
+    }
+
+
+    .readmoreBtn {
+        color: #00a8f3;
+        font-size: $readmore_btn_font_size;
+        margin: $about_readmore_margin;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+//Tablet
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+}
+
+//LaptopnMac
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+}
+
+//Desktop
+@media screen and (min-width: 1441px) {
+}
+  

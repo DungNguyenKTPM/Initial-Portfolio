@@ -1,0 +1,254 @@
+@import '@/styles/mixins.modules';
+
+@keyframes spinLogo {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+$container_header_height: 6rem;
+$container_header_margin_right: 4.3rem;
+$logo_margin_left: 4.3rem;
+$container_header_li_width: 7rem;
+$container_header_li_height: 2rem;
+$container_a_font_size: 1.3rem;
+
+
+
+.containerHeader {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #000000c1;
+    left: 0;
+    right: 0;
+    height: $container_header_height;
+    width: 100%;
+    z-index: 100;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.absoluteHeader {
+    position: absolute;
+    top: 0;
+}
+
+.fixedHeader {
+    position: fixed;
+    top: -5.2rem;
+    background-color: #0000006a;
+    box-shadow: 2px 0px 12px 0px rgba(0, 0, 0, 0.15);
+    transform: translateY(83px);
+    backdrop-filter: blur(5px);
+    transition: transform 0.7s ease;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.containerMenu {
+    @include flex_box_custom(center, center, 3rem);
+    margin-right: $container_header_margin_right;
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        width: $container_header_li_width;
+        height: $container_header_li_height;
+        text-align: center;
+        @include radius_common(5px);
+        transition: 1s;
+        box-sizing: border-box;
+        
+    }
+    
+    a {
+        font-weight:bold;
+        font-size: $container_a_font_size;
+        color: #8cfffb;
+    }
+    
+    li:hover {
+        cursor: pointer;
+        transform: scale(2); 
+        background-color: #6762627e;
+        z-index: 1;
+        transition: 0.4s transform;
+    }
+    
+    li::after {
+        content: '';
+        display:block;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(45deg, #3f48cc50, #00a6f371, #8cfffbab, #00a6f371, #3f48cc4c);
+        transform:scale(0);
+        transition: transform 0.4s;
+        transform-origin: right;
+    }
+    
+    li:hover::after {
+        transform: scale(1);
+        transform-origin: left;
+    }
+
+}
+
+.logoSetting {
+    width: 5rem;
+    height: 5rem;
+    @include radius_common(50px);
+    animation: spinLogo 0.5s linear infinite;
+    margin-left: $logo_margin_left;
+}
+
+.logoSetting:hover {
+    cursor: pointer;
+    animation: spinLogo 3s linear infinite;
+}
+
+//Mobile
+@media screen and (max-width: 600px) {
+    $container_header_height: 5rem;
+    $container_header_margin_right: 0.5rem;
+    $logo_margin_left: 0.5rem;
+    $container_header_li_width: 7rem;
+    $container_header_li_height: 1.5rem;
+    $container_a_font_size: 1rem;
+
+
+    .containerHeader {
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+        background-color: #000000c1;
+        left: 0;
+        right: 0;
+        height: $container_header_height;
+        width: 100%;
+        z-index: 100;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    .absoluteHeader {
+        position: absolute;
+        top: 0;
+    }
+    
+    .fixedHeader {
+        position: fixed;
+        top: -5.2rem;
+        background-color: #0000006a;
+        box-shadow: 2px 0px 12px 0px rgba(0, 0, 0, 0.15);
+        transform: translateY(83px);
+        backdrop-filter: blur(5px);
+        transition: transform 0.7s ease;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    .containerMenu {
+        @include flex_box_custom(center, center, 0);
+        margin-right: $container_header_margin_right;
+    
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    
+        li {
+            width: $container_header_li_width;
+            height: $container_header_li_height;
+            text-align: center;
+            @include radius_common(5px);
+            transition: 1s;
+            box-sizing: border-box;
+        }
+        
+        a {
+            font-weight:bold;
+            font-size: $container_a_font_size;
+            color: #8cfffb;
+            margin: 0;
+            padding: 0;
+        }
+
+        li:hover {
+            cursor: pointer;
+            transform: scale(1); 
+            background-color: #6762627e;
+            z-index: 1;
+            transition: 0.4s transform;
+        }
+        
+        li::after {
+            content: '';
+            display:block;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(45deg, #3f48cc50, #00a6f371, #8cfffbab, #00a6f371, #3f48cc4c);
+            transform:scale(0);
+            transition: transform 0.4s;
+            transform-origin: right;
+        }
+        
+        li:hover::after {
+            transform: scale(1);
+            transform-origin: left;
+        }
+    
+    }
+    
+    .logoSetting {
+        width: 3rem;
+        height: 3rem;
+        @include radius_common(50px);
+        animation: spinLogo 0.5s linear infinite;
+        margin-left: $logo_margin_left;
+    }
+    
+    .logoSetting:hover {
+        cursor: pointer;
+        animation: spinLogo 3s linear infinite;
+    }
+    
+}
+
+//Tablet
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    $container_header_height: 6rem;
+    $container_header_margin_right: 4.3rem;
+    $logo_margin_left: 4.3rem;
+    $container_header_li_width: 7rem;
+    $container_header_li_height: 2rem;
+    $container_a_font_size: 1.3rem;
+}
+
+//LaptopnMac
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    $container_header_height: 6rem;
+    $container_header_margin_right: 4.3rem;
+    $logo_margin_left: 4.3rem;
+    $container_header_li_width: 7rem;
+    $container_header_li_height: 2rem;
+    $container_a_font_size: 1.3rem;
+}
+
+//Desktop
+@media screen and (min-width: 1441px) {
+    $container_header_height: 6rem;
+    $container_header_margin_right: 4.3rem;
+    $logo_margin_left: 4.3rem;
+    $container_header_li_width: 7rem;
+    $container_header_li_height: 2rem;
+    $container_a_font_size: 1.3rem;
+}
+  

@@ -1,0 +1,153 @@
+@import '@styles/mixins.modules';
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+
+
+$container_intro_height: 60rem;
+$container_intro_padding: 6rem 0 0 4rem;
+$avatar_setting_width: 20rem;
+$avatar_setting_height: 34rem;
+$intro_setting_width: 40rem;
+$intro_setting_height: 40rem;
+$nameSetting_font_size: 8.5rem;
+$profession_font_size: 4rem;
+
+
+
+.containerIntro{
+    width: 100%;
+    height: $container_intro_height;
+    font-family: "Protest Revolution", sans-serif;
+    padding: $container_intro_padding;
+    @include flex_box_custom(center, top, 0);
+    box-sizing: border-box;
+    cursor: default;
+
+    .avatarSetting {
+        width: $avatar_setting_width;
+        height: $avatar_setting_height;
+        margin: 0;
+        padding: 0;
+    }
+
+    .introSetting {
+        width: $intro_setting_width;
+        height: $intro_setting_height;
+        font-size: 2.5rem;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    
+    .introSetting {
+        
+        p {
+            margin: 0;
+        }
+    }
+    
+    .nameSetting {
+        font-size: $nameSetting_font_size;
+        font-weight: 500;
+        line-height: 1;
+        text-transform: uppercase;
+        background: radial-gradient(circle, #8cfffb, #00a8f3, #3f48cc, #8cfffb, #00a8f3, #8cfffb, #00a8f3,);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+        padding-top: 1.5rem;
+    }
+    
+    .professionSetting {
+        font-size: $profession_font_size;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}
+
+
+
+
+//Mobile
+@media screen and (max-width: 600px) {
+    $container_intro_height: 60rem;
+    $container_intro_padding: 6rem 0 0 4rem;
+    $avatar_setting_width: 15rem;
+    $avatar_setting_height: 28rem;
+    $intro_setting_width: 100%;
+    $intro_setting_height: 100%;
+    $nameSetting_font_size: 3.5rem;
+    $profession_font_size: 1.5rem;
+
+
+
+    .containerIntro{
+        display: flex;
+        width: 100%;
+        height: $container_intro_height;
+        font-family: "Protest Revolution", sans-serif;
+        padding: $container_intro_padding;
+        @include flex_box_custom(center, top, 0);
+        flex-direction: column;
+        box-sizing: border-box;
+        cursor: default;
+
+        .avatarSetting {
+            width: $avatar_setting_width;
+            height: $avatar_setting_height;
+            margin: 2rem;
+            padding: 0;
+        }
+
+        .introSetting {
+            width: $intro_setting_width;
+            height: $intro_setting_height;
+            font-size: 1rem;
+            line-height: 1;
+            margin: 2rem;
+            padding: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .introSetting {
+            
+            p {
+                margin: 0;
+            }
+        }
+        
+        .nameSetting {
+            font-size: $nameSetting_font_size;
+            font-weight: 500;
+            line-height: 1;
+            text-transform: uppercase;
+            background: radial-gradient(circle, #8cfffb, #00a8f3, #3f48cc, #8cfffb, #00a8f3, #8cfffb, #00a8f3,);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            padding-top: 1.5rem;
+        }
+        
+        .professionSetting {
+            font-size: $profession_font_size;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+
+}
+
+//Tablet
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+}
+
+//LaptopnMac
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+}
+
+//Desktop
+@media screen and (min-width: 1441px) {
+}
+  

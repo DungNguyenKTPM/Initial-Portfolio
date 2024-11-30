@@ -1,0 +1,327 @@
+@import '@styles/mixins.modules';
+
+
+//contact
+$container_contact_margin_top: 6.25rem;
+$text_contact_width: 50rem;
+$text_contact_font-size: 1.9rem;
+$text_contact_margin-left: 2.8rem;
+$text_contact_img_width: 2.19rem;
+$text_contact_img_height: 2.19rem;
+$text_contact_img_margin: 0 0.44rem -0.32rem 0;
+$text_contact_img_padding: 0.32rem;
+$contact_hand_right_width: 3.2rem;
+$contact_hand_right_height: 2.5rem;
+$contact_hand_bottom_width: 4rem;
+$contact_hand_bottom_height: 2.5rem;
+$contact_li_width: 31.25rem;
+$contact_li_height: 6.25rem;
+
+//form
+$form_contact_width: 37.5rem;
+$form_contact_height: 50rem;
+$contact_padding: 0 3.2rem 3.2rem 3.2rem;
+$form_contact_button_width: 12.5rem;
+$form_contact_button_height: 3.2rem;
+
+
+
+.containerContact {
+    display: flex;
+    width: 100%;
+    margin-top: $container_contact_margin_top;
+    cursor: default;
+
+    .textContact {
+        width: $text_contact_width;
+        background: #daf0ff;
+        color: #000;
+        font-size: $text_contact_font-size;
+        margin-left: $text_contact_margin-left;
+
+        img {
+            width: $text_contact_img_width;
+            height: $text_contact_img_height;
+            margin: $text_contact_img_margin;
+            padding: $text_contact_img_padding;
+            @include radius_common(7px);
+            box-sizing: border-box;
+        }
+
+        .handRight {
+            width: $contact_hand_right_width;
+            height: $contact_hand_right_height;
+            margin: 0;
+            padding: 0;
+            transform: rotate(260deg);
+        }
+
+        .handBottom {
+            width: $contact_hand_bottom_width;
+            height: $contact_hand_bottom_height;
+            margin: 0;
+            padding: 0;
+            transform: rotate(60deg);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            width: $contact_li_width;
+            height: $contact_li_height;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+
+
+.formContact {
+    width: $form_contact_width;
+    height: $form_contact_height;
+    color: #fff;
+    background: #1e2127;
+    box-sizing: border-box;
+    cursor: default;
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    input, textarea{
+        display: block;
+        background: transparent;
+        color: #fff;
+        padding: 0.63rem;
+        border: 0;
+        border-bottom: 2px #fff solid ;
+        text-align: left;
+        outline: none;
+        transition: border-color 0.5s;
+    }
+    
+    input {
+        width: 100%;
+        height: 1.88rem;
+        margin-bottom: 0.63rem;
+    }
+    
+    textarea {
+        width: 100%;
+        height: 100px;
+    }
+    
+    input::before, textarea::before {
+        content: "";
+        position: absolute;
+        
+    }
+    
+    input:hover, textarea:hover{
+        border-bottom: 2px #080c78f0 solid;
+    }
+    
+    input:focus, textarea:focus {
+        border-bottom: 2px #080c78f0 solid;
+    }
+    
+    input:valid, textarea:valid {
+        border-bottom: 2px #080c78f0 solid;
+    }
+}
+
+.textContact,
+.formContact {
+    padding: $contact_padding;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+
+.point {
+    cursor: pointer;
+}
+
+
+//Mobile
+@media screen and (max-width: 600px) {
+    //contact
+    $container_contact_margin_top: 6.25rem;
+    $text_contact_width: 100%;
+    $text_contact_font-size: 1rem;
+    $text_contact_margin-left: 0rem;
+    $text_contact_img_width: 2.19rem;
+    $text_contact_img_height: 2.19rem;
+    $text_contact_img_margin: 0 0.44rem -0.32rem 0;
+    $text_contact_img_padding: 0.32rem;
+    $contact_hand_right_width: 2.5rem;
+    $contact_hand_right_height: 1.5rem;
+    $contact_hand_bottom_width: 2.5rem;
+    $contact_hand_bottom_height: 1.5rem;
+    $contact_li_width: 31.25rem;
+    $contact_li_height: 6.25rem;
+
+    //form
+    $form_contact_width: 100%;
+    $form_contact_height: 45rem;
+    $contact_padding: 0 3.2rem 3.2rem 3.2rem;
+    $form_contact_button_width: 12.5rem;
+    $form_contact_button_height: 3.2rem;
+
+
+
+    .containerContact {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: $container_contact_margin_top;
+        cursor: default;
+
+        .textContact {
+            width: $text_contact_width;
+            background: #daf0ff;
+            color: #000;
+            font-size: $text_contact_font-size;
+            margin-left: $text_contact_margin-left;
+            box-sizing: border-box;
+
+            img {
+                width: $text_contact_img_width;
+                height: $text_contact_img_height;
+                margin: $text_contact_img_margin;
+                padding: $text_contact_img_padding;
+                @include radius_common(7px);
+                box-sizing: border-box;
+            }
+
+            .handRight {
+                width: $contact_hand_right_width;
+                height: $contact_hand_right_height;
+                margin: 0;
+                padding: 0;
+                transform: rotate(190deg);
+            }
+
+            .handBottom {
+                width: $contact_hand_bottom_width;
+                height: $contact_hand_bottom_height;
+                margin: 0;
+                padding: 0;
+                transform: rotate(10deg);
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            li {
+                width: $contact_li_width;
+                height: $contact_li_height;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                overflow: hidden;
+
+                p {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+
+    .formContact {
+        width: $form_contact_width;
+        height: $form_contact_height;
+        color: #fff;
+        background: #1e2127;
+        box-sizing: border-box;
+        cursor: default;
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        input, textarea{
+            display: block;
+            background: transparent;
+            color: #fff;
+            padding: 0.63rem;
+            border: 0;
+            border-bottom: 2px #fff solid ;
+            text-align: left;
+            outline: none;
+            transition: border-color 0.5s;
+        }
+        
+        input {
+            width: 100%;
+            height: 1.88rem;
+            margin-bottom: 0.63rem;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+        
+        input::before, textarea::before {
+            content: "";
+            position: absolute;
+            
+        }
+        
+        input:hover, textarea:hover{
+            border-bottom: 2px #080c78f0 solid;
+        }
+        
+        input:focus, textarea:focus {
+            border-bottom: 2px #080c78f0 solid;
+        }
+        
+        input:valid, textarea:valid {
+            border-bottom: 2px #080c78f0 solid;
+        }
+    }
+
+    .textContact,
+    .formContact {
+        padding: $contact_padding;
+        line-height: 1.5;
+        overflow: hidden;
+    }
+
+}
+
+//Tablet
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+}
+
+//LaptopnMac
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+}
+
+//Desktop
+@media screen and (min-width: 1441px) {
+}
+  
+
+
+
+
+
+

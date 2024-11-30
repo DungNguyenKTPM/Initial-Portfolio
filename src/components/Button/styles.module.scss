@@ -1,0 +1,142 @@
+@import "@styles/mixins.modules";
+
+
+//primary
+$primary_btn_width: 13rem;
+$primary_btn_height: 3.7rem;
+
+//secondary
+$secondary_btn_width: 10rem;
+$secondary_btn_height: 3rem;
+
+//tertiary
+$tertiary_btn_width: 13rem;
+$tertiary_btn_height: 4rem;
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+}
+
+.primaryBtn {
+    width: $primary_btn_width;
+    height: $primary_btn_height;
+    line-height:0;
+    font-size: 2.7rem;
+    background: linear-gradient(45deg, #3f48cca2, #00a6f3a3, #8cfffbab, #00a6f3a4, #3f48cca1);
+
+    &:hover {
+        background: linear-gradient(45deg, #3f48cc, #00a8f3, #8cfffb, #00a8f3, #3f48cc);
+    }
+}
+
+.secondaryBtn {
+    width: $secondary_btn_width;
+    height: $secondary_btn_height;
+    font-size: 1.2rem;
+    background: linear-gradient(90deg, #000dca,#000cb8, #000ba1, #000cb8,#000dca);
+    color: #fff;
+    @include radius_common;
+
+    &:hover {
+        background: linear-gradient(90deg, #0059ff,#0033ff, #0011ff, #0033ff,#0059ff);
+    }
+}
+
+.tertiaryBtn {
+    width: $tertiary_btn_width;
+    height: $tertiary_btn_height;
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #000dca,#000cb8, #000ba1, #000cb8,#000dca);
+    color: #fff;
+    @include radius_common(0);
+
+    &:hover {
+        background: linear-gradient(90deg, #0059ff,#0033ff, #0011ff, #0033ff,#0059ff);
+    }
+}
+
+
+//Mobile
+@media screen and (max-width: 600px) {
+    //primary
+    $primary_btn_width: 8rem;
+    $primary_btn_height: 2rem;
+
+    //secondary
+    $secondary_btn_width: 10rem;
+    $secondary_btn_height: 3rem;
+
+    //tertiary
+    $tertiary_btn_width: 13rem;
+    $tertiary_btn_height: 4rem;
+
+    .btn {
+        display: inline-block;
+        text-align: center;
+        border: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .primaryBtn {
+        width: $primary_btn_width;
+        height: $primary_btn_height;
+        line-height:0;
+        font-size: 1.5rem;
+        background: linear-gradient(45deg, #3f48cca2, #00a6f3a3, #8cfffbab, #00a6f3a4, #3f48cca1);
+
+        &:hover {
+            background: linear-gradient(45deg, #3f48cc, #00a8f3, #8cfffb, #00a8f3, #3f48cc);
+        }
+    }
+
+    .secondaryBtn {
+        width: $secondary_btn_width;
+        height: $secondary_btn_height;
+        font-size: 1.2rem;
+        background: linear-gradient(90deg, #000dca,#000cb8, #000ba1, #000cb8,#000dca);
+        color: #fff;
+        @include radius_common;
+
+        &:hover {
+            background: linear-gradient(90deg, #0059ff,#0033ff, #0011ff, #0033ff,#0059ff);
+        }
+    }
+
+    .tertiaryBtn {
+        width: $tertiary_btn_width;
+        height: $tertiary_btn_height;
+        font-size: 1.5rem;
+        background: linear-gradient(90deg, #000dca,#000cb8, #000ba1, #000cb8,#000dca);
+        color: #fff;
+        @include radius_common(0);
+
+        &:hover {
+            background: linear-gradient(90deg, #0059ff,#0033ff, #0011ff, #0033ff,#0059ff);
+        }
+    }
+
+}
+
+//Tablet
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+}
+
+//LaptopnMac
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+}
+
+//Desktop
+@media screen and (min-width: 1441px) {
+}
+  
