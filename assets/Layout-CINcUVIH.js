@@ -1,1 +1,0 @@
-import{j as o}from"./index-DI0I7vjm.js";import{P as s}from"./Footer-SrpDDX1S.js";const r="_containerLayout_12fks_1",a={containerLayout:r};function e({children:n}){const{containerLayout:t}=a;return o.jsx("main",{children:o.jsx("div",{className:t,children:n})})}e.propTypes={children:s.node.isRequired};export{e as M};
